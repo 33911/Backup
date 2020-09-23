@@ -1,0 +1,265 @@
+
+! Microsoft Corporation
+! --------------------------------------------------------------------------------------------------------------------------------------------
+! Generic configuration templates
+!
+! DISCLAIMER : THIS IS A SAMPLE CONFIGURATION SCRIPT OFFERED BY MICROSOFT FOR YOUR 3RD PARTY DEVICE. IF YOU NEED 
+!			   HANDS-ON SUPPORT OR FURTHER ASSISTANCE, PLEASE CONTACT YOUR VENDOR DIRECTLY.
+!
+! This configuration template shows all the VPN configuration parameters associated with your S2S VPN connection.
+! The script you need to copy onto your Cisco ISR SRX (IOS 15.2+) to setup a RouteBased IKEv2 VPN Tunnel to Azure (with BGP) is found below [#11]
+! --------------------------------------------------------------------------------------------------------------------------------------------
+
+! [1] Resource names
+!     CONNECTION NAME			: This field is the name of your connection resource
+!     VIRTUAL NETWORK GATEWAY	: The name of your Azure VPN gateway resource for the connection
+!     LOCAL NETWORK GATEWAY		: The name of your local network gateway resource for the connection
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+/Data/CONNECTION_NAME = SCWEU-VNET-01toSite1
+/Data/VNG_NAME        = e7cb0069-4a1a-4598-b175-473ad32c8b32
+/Data/LNG_NAME        = SCWEU-LNGateway
+
+! [2] Public IP address of the Azure VPN gateway
+!     Active-Standby VPN gateway (single public IP address)
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+/Data/VNG_GATEWAYIP   = 40.119.133.207
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+!     Active-Active VPN gateway (A/A mode if more than one public IP is listed below)
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+/Data/VNG_GATEWAYIPS/IpAddress/IP = 40.119.133.207
+
+! [3] Public IP address of the on-premises VPN device
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+/Data/LNG_GATEWAYIP   = 146.216.2.33
+
+
+! [4] VNet address prefixes: a list of all VNet address prefixes in different formats
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+/Data/VnetSubnets/Subnet/SP_NetworkIpRange = 172.26.130.0
+  SP_NetworkSubnetMask   = 255.255.254.0
+  SP_NetworkWildcardBits = 0.0.1.255
+  SP_NetworkCIDR         = 172.26.130.0/23
+  SP_TunnelName          = SP_TunnelName
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+! [5] On-premises address prefixes: a list of all on-premises address prefixes defined in LNG
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+/Data/OnPremiseSubnets/Subnet/SP_NetworkIpRange = 146.216.232.0
+  SP_NetworkSubnetMask   = 255.255.248.0
+  SP_NetworkWildcardBits = 0.0.7.255
+  SP_NetworkCIDR         = 146.216.232.0/21
+  SP_TunnelName          = SP_TunnelName  
+
+! [6] Phase 1/Main Mode:
+!     IKE encryption algorithm
+!     IKE hashing algorithm
+!     IKE Diffie-Hellman group
+!     IKE SA lifetime (seconds)
+!     IKE SA data size (Kilobytes)
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+/Data/IKE_ENCRYPTION_1 = AES256
+/Data/IKE_INTEGRITY_1  = SHA384
+/Data/IKE_DHGROUP_1    = ECP384
+/Data/IKE_SALIFETIME_1 = 28800
+
+! [7] Phase 2/Quick Mode:
+!     IPsec encryption algorithm
+!     IPsec hashing algorithm
+!     PFS Group (Perfect Forward Secrecy)
+!     IPsec SA (QMSA) lifetime (seconds)
+!     IPsec SA (QMSA) lifetime (kilobytes)
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+/Data/IPsec_ENCRYPTION_1 	= AES256
+/Data/IPsec_INTEGRITY_1  	= SHA256
+/Data/IPsec_PFSGROUP_1   	= ECP384
+/Data/IPsec_SALIFETIME   	= 28800
+/Data/IPsec_KB_SALIFETIME   = 102400000
+
+! [8] Connection pre-shared key
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+/Data/CONNECTION_PSK = "PSK Need To be Added"
+
+! [9] BGP parameters - Azure VPN gateway
+!     Enable BGP
+!     BGP ASN for Azure VPN gateway
+!     BGP speaker IP address for the Azure VPN gateway
+!     BGP peer IP address(es)
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+/Data/CONNECTION_BGP_ENABLED  = False
+/Data/VNG_ASN                 = VNG_ASN
+/Data/VNG_BGPIP               = VNG_BGPIP
+
+! [10] BGP parameters - on-premises network / LNG
+!      BGP ASN for the on-premises network
+!      BGP speaker IP address for the on-premises network
+!
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+/Data/LNG_ASN                = LNG_ASN
+/Data/LNG_BGPIP              = LNG_BGPIP
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+
+! [11] Misc
+! NOTE: REPLACE these miscellaneous variables on the script below values as necessary, some devices may have overlapping identifiers for other pre-configured VPN tunnels/policies
+!=================================================================================
+/Data/AccessList				= Azure-ACL-SCWEU-VNET-01toSite1
+/Data/Outside_Interface_Name 	= GigabithEthernet0/0 
+/Data/Inside_Interface_Name		= GigabithEthernet0/1 
+!=================================================================================
+
+! ---------------------------------------------------------------------------------------------------------------------
+! ACL rules
+! 
+! Some VPN devices require explicit ACL rules to allow cross-premises traffic towards Azure:
+
+! Ensure all the lines below under the network objects are single-spaced.
+
+object-group network AzureNetworks
+ description Azure-Virtual-Networks
+
+network-object 172.26.130.0 255.255.254.0 
+exit
+
+object-group network OnpremisesNetworks
+ description Onpremises-Networks
+
+network-object 146.216.232.0 255.255.248.0 
+exit
+
+access-list Azure-ACL-SCWEU-VNET-01toSite1 permit 40.119.133.207 log
+access-list Azure-ACL-SCWEU-VNET-01toSite1 permit object-group AzureNetworks log 
+access-list Azure-ACL-SCWEU-VNET-01toSite1 permit object-group OnpremisesNetworks log
+
+! ---------------------------------------------------------------------------------------------------------------------
+! IKEv2 PROPOSAL
+
+crypto ikev2 proposal azure-proposal-SCWEU-VNET-01toSite1
+ encryption aes-cbc-256 aes-cbc-128
+ integrity sha1 sha256
+ group 2
+!
+!
+
+! ---------------------------------------------------------------------------------------------------------------------
+! IKEv2 POLICY
+
+crypto ikev2 policy azure-policy-SCWEU-VNET-01toSite1
+ proposal azure-proposal-SCWEU-VNET-01toSite1
+!
+!
+
+! ---------------------------------------------------------------------------------------------------------------------
+! IKEv2 KEYRING (PRE-SHARED KEY)
+
+crypto ikev2 keyring azure-keyring-SCWEU-VNET-01toSite1
+ peer 40.119.133.207
+  address 40.119.133.207
+  pre-shared-key "PSK Need to be Added"
+ !
+!
+!
+
+! ---------------------------------------------------------------------------------------------------------------------
+! IKEv2 PROFILE 
+! NOTE: Interface 'GigabitEthernet0/0' was picked as the LAN interface where on-Premises networks are connected.
+!		REPLACE as needed.
+
+crypto ikev2 profile azure-profile-SCWEU-VNET-01toSite1
+ match address local interface GigabitEthernet0/0
+ match identity remote address 40.119.133.207 255.255.255.255
+ authentication local pre-share
+ authentication remote pre-share
+ keyring local azure-keyring
+ lifetime 28800
+ dpd 10 5 on-demand
+!
+!
+
+! ---------------------------------------------------------------------------------------------------------------------
+! IPSEC TRANSFORM 
+
+crypto ipsec transform-set azure-ipsec-proposal-set esp-aes 256 esp-sha256-hmac
+!
+crypto ipsec profile azure-ipsec-profile-SCWEU-VNET-01toSite1
+ set security-association lifetime kilobytes 102400000
+ set transform-set azure-ipsec-proposal-set
+ set ikev2-profile azure-profile-SCWEU-VNET-01toSite1
+!
+!
+
+! ---------------------------------------------------------------------------------------------------------------------
+! TUNNEL INTERFACE FOR ROUTEBASED ROUTING TO AZURE
+! Note: 'Tunnel100' was picked as an arbitrary interface name. 
+!		REPLACE as needed.
+
+interface Tunnel100
+ ip address LNG_BGPIP 255.255.255.254
+ ip tcp adjust-mss 1350
+ tunnel source 146.216.2.33
+ tunnel mode ipsec ipv4
+ tunnel destination 40.119.133.207
+ tunnel protection ipsec profile azure-ipsec-profile-SCWEU-VNET-01toSite1
+!
+
+! ---------------------------------------------------------------------------------------------------------------------
+! WAN INTERFACE (WHERE THE PUBLIC IP OF CISCO ISR PORT IS LOCATED)
+! NOTE: REPLACE the interface name ('GigabitEthernet0/0') as needed.
+!		REPLACE the WAN public (ISP) IP subnet as needed. In this example, it's '255.255.252.0', denoting a /22 ISP Public IP subnet
+
+interface GigabitEthernet0/0
+ description OUTSIDE
+ ip address 146.216.2.33 255.255.252.0
+ duplex auto
+ speed auto
+ no cdp enable
+!
+
+! ---------------------------------------------------------------------------------------------------------------------
+! LAN INTERFACE (WHERE THE ONPREMISES NETWORKS ARE LOCATED)
+! NOTE: REPLACE the interface name ('GigabitEthernet0/1') as needed.
+!		Insert your LAN Port IP as well as your LAN mask below, as configured on your device.
+
+interface GigabitEthernet0/1
+ ip address "INSERT_LAN-PORT_IP_HERE" "INSERT_LAN_MASK_HERE"     
+ duplex auto
+ speed auto
+ no cdp enable
+ no mop enabled
+!
+
+! ---------------------------------------------------------------------------------------------------------------------
+! BGP ROUTER CONFIGURATION
+! NOTE: Change your LAN BGP Advertisements (under the IPV4 Addr Family) as needed for your tunnel
+
+router bgp LNG_ASN
+ bgp log-neighbor-changes
+ neighbor VNG_BGPIP remote-as VNG_ASN 
+ neighbor VNG_BGPIP ebgp-multihop 255
+ neighbor VNG_BGPIP update-source Tunnel100
+ !
+ address-family ipv4
+  network "INSERT LAN BGP ROUTE HERE" mask "INSERT BGP ROUTE SUBNET MASK HERE"
+  network "INSERT LAN BGP ROUTE HERE" mask "INSERT BGP ROUTE SUBNET MASK HERE"
+  ! etc...
+  neighbor VNG_BGPIP activate
+ exit-address-family
+!
+ip forward-protocol nd
+!
+
+! ---------------------------------------------------------------------------------------------------------------------
+! STATIC ROUTES TO ENSURE AZURE-SPECIFIC TRAFFIC CROSSES THE TUNNEL INTERFACE BEFORE GETTING OUTSIDE
+! NOTE: UPDATE the routes as needed.
+!		If you are going through an ISP default gateway, make sure that IP is reflected under the general traffic going through the WAN instead (Line 1 below).
+
+ip route 0.0.0.0 0.0.0.0 GigabitEthernet0/0 146.216.2.33
+ip route 146.216.232.0 255.255.248.0 Tunnel100
+
+! OPTIONAL
+no service-routing capabilities-manager
+
+

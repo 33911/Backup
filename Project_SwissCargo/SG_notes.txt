@@ -1,0 +1,112 @@
+host name: SCWEU-TrainingTensorFlow-01
+private ip: 172.26.130.132
+
+host name: SCWEU-DevTensorFlow-01
+private ip: 172.26.130.133
+
+host name: SCWEU-TestTensorFlow-01
+private ip: 172.26.131.4
+
+Host name: SCWEU-ProdTensorFlowPrimary-01
+Host name: SCWEU-ProdTensorFlowSecondary-01
+
+
+SCWEU-BastionS (win 10)
+Public IP address:51.144.142.143
+Private IP address:172.26.131.100
+
+SCWEU-AppGateway
+172.26.130.70
+
+SCWEU-BastionS-ip
+SD-I3L-938286 
+
+SCWEU-VNET-01 : 172.26.130.0/23 
+
+172.26.130.64/26          – App GW (SCWEU-SUBNET-APP Gateway AND SCWEU-SUBNET-Bastion)
+172.26.130.128/25        – DEV (SCWEU-SUBNET-DEV)
+172.26.131.0/26            – TEST (SCWEU-SUBNET-Test)
+172.26.131.64/27          – SCWEU-SUBNETm-VPNGateway 
+172.26.131.96/27          – SCWEU-SUBNET-Bastion
+172.26.131.128/25        – PROD (SCWEU-SUBNET-PROD)
+
+
+SCWEU-BastionHost
+
+AzureBastionSubnet (172.26.131.128/26)
+
+SCWEU-SUBNET-Dev
+
+SCWEU-VPNGateway
+SCWEU-VNET1GWpip
+40.119.133.207 (SCWEU-VNET1GWpip)
+
+SCWEU-LNGateway
+Dec@2019
+
+SCWEU-WindowsVM (2019)
+SCWEU-WindowsVM-ip: 51.137.59.53
+private IP: 172.26.131.101
+
+
+SCWEU-TensorFlow01-snapshot
+SMG Guys: what public facing IPs are you using to azure through RDP
+
+Bostin 
+inbound allow out itc public ip
+Windows 10 server deploy in bostin subnet
+access through RDP and 
+then install putty and try to access linux machine through ssh
+
+Username: SGadmin
+Password: P@ssw0rd1234
+
+Request for change
+SMG laptop request-->network rquest--> 
+allow public IP
+
+beckend pool
+Listner config rules
+
+shared key
+
+DHGroup2
+
+Needed:
+DHGroup20
+
+/Data/IKE_SALIFETIME_1 = 28800
+
+/Data/IPsec_PFSGROUP_1   	= None
+20 
+
+/Data/IPsec_SALIFETIME   	= 28800
+SbM1FkrN50hVC3RD7Eywisrghna==
+
+
+
+
+MSDevUser01,  MSDevUser02, TSDevUser01 and TSDevUser02 in all the Dev and Test VMs.
+
+all the web access will be SSL enabled
+
+1. Regarding AD connect and NSG rules set up a call to clear requirment.
+2. Monthly Azure credits for Visual Studio subscribers
+
+
+Search Results
+115.112.38.116
+
+119.226.211.80
+need more RDP Licenses? 
+ believe you'll need to enable remote desktop services from inside the windows features interface. There are licensing costs associated with this feature.
+
+http://www.wackytechtips.com/installing-and-configuring-remote-desktop-services-rds-on-windows-server-2012/
+
+mkdir /home/new_home_directory
+chown username:username /home/new_home_directory
+chmod 700 /home/new_home_directory
+usermod --home /home/new_home_directory username
+
+
+MS LUIS to process the hits in a month and I guess currently it is 1k/month. Can you subscribe for higher volume and keep us posted on this.
