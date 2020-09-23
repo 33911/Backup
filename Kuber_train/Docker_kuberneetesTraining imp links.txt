@@ -1,0 +1,31 @@
+https://console.cloud.google.com/
+
+https://kubernetes.io/docs/home/
+
+Trainer github link:
+https://github.com/amarjeet-arora/jd
+
+https://github.com/openshift-evangelists/kbe
+
+Docker hub
+https://hub.docker.com/
+id: prasoon123
+emailId:prasoon.gumasta@gmail.com
+pwd:August@2020
+
+Aws console link:
+https://portal.aws.amazon.com/
+
+id: prasoon.gumasta@itcinfotech.com
+Aug@2020
+
+Docker installation links:
+https://docs.docker.com/engine/install/ubuntu/
+
+
+Docker and kuberneetes interview questions link:
+https://www.toptal.com/docker/interview-questions
+
+https://www.edureka.co/blog/interview-questions/docker-interview-questions/
+
+https://www.knowledgehut.com/interview-questions/kubernetes

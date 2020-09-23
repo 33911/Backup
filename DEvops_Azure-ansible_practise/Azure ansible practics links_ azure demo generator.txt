@@ -1,0 +1,21 @@
+Ansible Project:
+https://dev.azure.com/33911/AnsibleConn/_apps/hub/ms.vss-ciworkflow.build-ci-hub?_a=edit-build-definition&id=26
+
+Azure Demo generator:
+https://azuredevopsdemogenerator.azurewebsites.net/?Name=Ansible
+
+click on signin
+
+https://azuredevopsdemogenerator.azurewebsites.net/environment/createproject
+
+Azure Devops labs:
+https://www.azuredevopslabs.com/labs/vstsextend/ansible/
+
+https://app.vsaex.visualstudio.com/me?mkt=en-US
+
+Ansible config links:
+https://docs.ansible.com/ansible/latest/reference_appendices/config.html
+
+https://docs.ansible.com/ansible/2.5/scenario_guides/guide_azure.html
+
+

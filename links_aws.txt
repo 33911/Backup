@@ -1,0 +1,33 @@
+https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Scenario1.html#VPC_Scenario1_Implementation
+
+
+https://tools.ietf.org/html/rfc4632
+
+https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html
+
+https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Scenario3.html
+
+DB creation:
+https://aws.amazon.com/getting-started/tutorials/create-nosql-table/
+
+AWS CLI install:
+https://docs.aws.amazon.com/cli/latest/userguide/install-windows.html#install-msi-on-windows
+
+AWS CLI configure:
+https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html
+
+
+i-00dbc234188e40658
+
+
+C:\Users\33911\Downloads\pp.txt
+
+aws dynamodb create-table \--table-name MusicCollection \--attribute-definitions \AttributeName=Artist,AttributeType=S AttributeName=SongTitle,AttributeType=S \--key-schema AttributeName=Artist,KeyType=HASH AttributeName=SongTitle,KeyType=RANGE \--provisioned-throughput ReadCapacityUnits=1,WriteCapacityUnits=1
+
+aws dynamodb put-item --table-name MusicCollection --item '{"Artist": {"S": "No One You Know"},"SongTitle": {"S": "Call Me Today"}, "AlbumTitle": {"S": "Somewhat Famous"} }' --return-consumed-capacity TOTAL
+
+ "SongTitle": {"S": "Call Me Today"} ,
+        "AlbumTitle": {"S": "Somewhat Famous"} }' \
+    --return-consumed-capacity TOTAL
+
+aws sns create-topic --name my-topic{"TopicArn": "arn:aws:sns:us-west-2:123456789012:my-topic"}

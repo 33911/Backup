@@ -1,0 +1,86 @@
+# 2. PRE-Reqs: Disable - Firewall | Swap | SELinux
+
+
+
+# Note: Execute on all nodes (master & worker)
+
+
+
+# Disable Firewall
+
+systemctl stop firewalld
+systemctl disable firewalld
+
+
+# OR - ensure ports [6443 10250] are open 
+
+
+
+# Disable Swap
+
+
+swapoff -a
+
+sed -i.bak -r 's/(.+ swap .+)/#\1/' /etc/fstab
+
+
+
+# Disable SELinux
+
+setenforce 0
+
+sed -i 's/enforcing/disabled/g' /etc/selinux/config
+
+
+
+
+pods are simmler to container in kuberneetes
+pod can hold sigle cointainer
+pod can be combination of containers or 
+
+
+Deployment consist different replicaset with version control
+
+REplicaSet is consist multile pods
+
+And many pods are running in different nodes
+
+Namespace1:  devide and type of manage deployment one namespace consist deployment
+
+service [its like a load balancer]: manage traffice from kubernatees and in which pod it will be transferred
+
+Cluster: Master and workers.
+
+scheduler:manage pods info
+
+kublet: is like an agent and run in each node and gives info to master node abt each instance[node]
+
+Kube-proxy: its required for node proxy or subnetting.
+
+pods: are the cointainer
+
+To deployment:
+kubectl apply -f client-pod.yaml
+
+Note: No of containers, Name and Ports these thigs cannot be upadted in pod once they are deployed.
+
+curl https://10.105.156.63:31515
+
+ kubectl get services
+ kubectl get po
+git clone https://github.com/amarjeet-arora/jd.git
+git --version
+yum install git
+
+ kubectl apply -f https://raw.githubusercontent.com/kubernetes/website/master/content/en/examples/controllers/nginx-deployment.yaml
+ kubectl get nodes
+
+
+kubectl get po -o wide
+
+kubectl apply -f client-deployment.yaml
+
+kubectl get deployments
+
+kubectl describe po helloworld-deployment
+

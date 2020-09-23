@@ -1,0 +1,3 @@
+kubeadm join 10.128.0.6:6443 --token 404g9a.68x55e6j5worpng5 \
+    --discovery-token-ca-cert-hash sha256:e176c07ae3c88149b83df0ee6d52d71f5bbd09156b26d74cb7090132df0b8305
+[root@kuberneetes-master-1 ~]# mkdir -p $HOME/.kube

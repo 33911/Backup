@@ -1,0 +1,33 @@
+# 2. PRE-Reqs: Disable - Firewall | Swap | SELinux
+
+
+
+# Note: Execute on all nodes (master & worker)
+
+
+
+# Disable Firewall
+
+systemctl stop firewalld
+systemctl disable firewalld
+
+
+# OR - ensure ports [6443 10250] are open 
+
+
+
+# Disable Swap
+
+
+swapoff -a
+
+sed -i.bak -r 's/(.+ swap .+)/#\1/' /etc/fstab
+
+
+
+# Disable SELinux
+
+setenforce 0
+
+sed -i 's/enforcing/disabled/g' /etc/selinux/config
+

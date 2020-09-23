@@ -1,0 +1,77 @@
+ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQBd9+1pbdmvgBIWo3wwrgjTDAGCQ21OqZxhhlnSg/EFkFUZq5oCyHi0vi3j4gJX2V/W+tvx/RXCBi/kXRFzUOqxsb7fbBmz+583F+Qk4/0WxthYyogDo0ubP+blk1RjOD043e4gVdj5jew7svTvt6IJwyfzg85VXN+MV4yuBQfIeJSNquRa9rYt/KT97cqiopoQ7ogy0JXFTS5yixe/19IiJJo+i3Q/sPFIsuJNnGMoBCB5E2lt8/0bDIfR1Iz4CKGGurOM/RjqInbaxEf2P5TyP2gfUIqTG4jDCGQwBnH0JktB3nhoGEgkWcsE6iNtFLHzdlIEVVSEZqvyL/NSXiUr prasoon-key
+
+
+container is running instance of image
+
+image-- software setup
+
+hub.docker.com  its like google play store
+
+
+sudo docker create volume myvol 
+
+admin pwd
+
+0c4ae15a231f4decb7eb07fbe01af398
+
+sudo docker exec -it <container ID> bash
+
+0c4ae15a231f4decb7eb07fbe01af398
+
+0c4ae15a231f4decb7eb07fbe01af398
+
+sudo git clone htpps://github.com/amarjeet-arora/dockerand-kub
+
+
+Docker linking
+Docker compose
+[creating multiple images parallelly and running it through docker.compose]
+
+sudo nano docker-compose.yml
+[
+version: '3.3'
+services:
+  web:
+    image: nginx
+    ports:
+    - 9090:80/tcp
+  database:
+    image: redis
+]
+
+sudo docker-compose config
+sudo docker-compose up -d
+
+curl http://localhost:9090
+sudo docker exec -it aa718d9664be redis-cli
+
+ sudo docker ps
+
+
+mgr:
+34.72.45.115
+
+worker1:
+34.68.114.104
+
+worker2:
+34.71.127.200
+
+Docker Swarm:
+
+sudo docker info
+
+sudo docker swarm init
+ [copy the docker swarm join link on the worker node]
+
+   sudo docker swarm join --token SWMTKN-1-3zh96kwb76ieggj04lzpk3ma9l3a8zxnr70ie8ljfrf3jfzyfs-5o8y8svrhq9t7wqgerxgfy1oc 10.128.0.3:2377
+[Need to run abv cmd on worker Vms]
+sudo docker node ls
+[how many worker are running for that swarn]
+
+sudo docker service create --replica 3 -p 80:80 --name web1 nginx
+[creating service]
+
+sudo docker service ls
+
+sudo docker service scale web1=6

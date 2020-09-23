@@ -1,0 +1,41 @@
+htpps://romilb@dev.azure.com/romilb/DevOps-ProjectDemo/_git/DevOps-ProjectDemo.git
+
+https://dev.azure.com/33911/_apis/resources/Containers/1682915?itemPath=drop%2FsampleWebApp%2Ftarget%2FROOT.war
+
+
+Integrate Jenkins with Azure Pipelines
+Integrate github with Azure Pipelines
+Create_Install_LAMP_on_Virtual_Machine_Ubuntu
+CreateLinuxVM_Configure_nginx_Using_CloudShell
+Deploy Java App and Configure CI/CD
+Azure devops CI CD (.net)
+AzureDevOps_CICD
+ApplicationInsightDemo1
+AzureDevOpsWithGithub_ASPNETCore
+AzureLoadBalancer_VirtualMachine
+
+
+http://javadevopsapp.azurewebsites.net/
+
+gitdeployuri: https://devopsdemouser12@webapp11499.scm.azurewebsites.net/webapp11499.git
+
+http://webapp11499.azurewebsites.net
+
+git remote add azure-prod https://devopsdemouser12@webapp11499.scm.azurewebsites.net/webapp11499.git
+
+
+
+echo GitURLstaging: $(az webapp deployment source config-local-git --name webapp11499 --resource-group AzureDevOpsWebAppRG --slot staging --query url --output tsv)
+
+
+az webapp deployment slot create --name webapp11499 --resource-group AzureDevOpsWebAppRG --slot staging
+
+
+
+GitURLstaging: https://devopsdemouser12@webapp11499-staging.scm.azurewebsites.net/webapp11499.git
+
+Staging web app URL: http://-staging.azurewebsites.net
+
+git remote add azure-staging http://-staging.azurewebsites.net
+
+git remote add origin https://github.com/33911/simple-feed-reader-

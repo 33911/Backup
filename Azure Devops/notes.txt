@@ -1,0 +1,36 @@
+Ansible component:
+power shell
+Sonar cloud
+Chef and Puppet
+Jenkin integration
+artifact
+Power BI   for monitoring and dashboard
+azure monitoring
+doker cointener
+kubernetes
+
+Jenkins integration lab docs
+git links docs  (note pad)
+
+
+
+Container
+VM or Nodes
+Pods
+images
+
+
+Docker Swam=Kubernetes=
+
+to manage our cointener services we have in azure continer registery
+
+
+
+
+playbook:  YAMl file
+
+az ad app create --password ThisIsTheAppPassword --display-name ansibleApp --homepage ansible.mydomain.com --identifier-uris ansible.mydomain.com
+
+ssh azureuser@51.136.12.205
+
+az resource tag --tags nginx --id /subscriptions/0dad144a-f084-416a-8d4a-cef994691b6d/resourceGroups/ansible-webservers-rg/providers/Microsoft.Compute/virtualMachines/ansible-webserver-vm1

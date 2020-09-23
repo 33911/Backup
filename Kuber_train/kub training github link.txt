@@ -1,0 +1,3 @@
+https://github.com/openshift-evangelists/kbe/tree/main/specs/
+
+https://github.com/amarjeet-arora/jd

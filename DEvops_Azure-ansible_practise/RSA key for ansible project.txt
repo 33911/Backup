@@ -1,0 +1,59 @@
+{
+  "appId": "c0be4dc2-985d-446c-87b6-41df403883cb",
+  "displayName": "prasoon",
+  "name": "http://prasoon",
+  "password": "trFpiCwLtwIbGpTj0kuAvGvLNT-dNt5131",
+  "tenant": "622f8cde-07b5-4d16-ab2a-6dc0c3a66e35"
+}
+
+
+
+"id": "0dad144a-f084-416a-8d4a-cef994691b6d"
+
+ssh -i <private key path> prasoon@52.140.32.40
+
+
+[default]
+subscription_id=0dad144a-f084-416a-8d4a-cef994691b6d
+client_id=c0be4dc2-985d-446c-87b6-41df403883cb
+secret=trFpiCwLtwIbGpTj0kuAvGvLNT-dNt5131
+tenant=622f8cde-07b5-4d16-ab2a-6dc0c3a66e35
+
+
+ssh-keygen -t rsa
+chmod 755 ~/.ssh
+touch ~/.ssh/authorized_keys
+chmod 644 ~/.ssh/authorized_keys
+ssh-copy-id prasoon@52.140.32.40
+
+
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCsR6wmUrcZS0Uunnje9CLcT7SXIG259AnEY6DzPdkxzCNXtDNKEHQAO4w9BqM1o9+Z89NE86WM4qOIxbCprf0QbAptlzBNAP3VB2kxHxUIbofolFYTA1mdzpIgM66/g3zln3oKaHyb5TWjDVXY+UOPRSSOKZjYJzM7/hITxKoSLrAuD5lZn8JgSkxHy0GVPWOtZsVsVARq3YjK9w7wklh+G6C9Cn08UW5DOTasaboVicowKlLFMp2vQjITxiKNiOqZAB2mTmhKprBV0EdHw9qBwF/ovzn4MF8FaHmYMQRxBC5Q56kgE3NKJLqE62clU9EjYKqK2eGY9PktwwlKqBJD prasoon@AnsibleTest
+
+
+-----BEGIN RSA PRIVATE KEY-----
+MIIEogIBAAKCAQEAu4wfXGMxSFIQLslEAESpt6AzcrRFtRx+HV/A7Z4MBBkairw8
+a5olJ54HCl+ZZFyv/LA4J02x/fdcakZu6X/840hHd/IQYRf2mprs+Xbf484U8rHb
+MiSjP3/wRRy4VOlNRq4y3DKDWObMt/QTwIbJ7Rae9eKN38BmvE3LXD3AS0wrU9FK
+F9xN+aCSCPRPVu8P+eRlqI6kTdDWhNPJPWTyu0FkLopwymTRwTY/WOrfKjPRFlid
+UnUkE0fIfoASk6uwjGMoa/AtVsULVhKWOypxbaynhBzRMb6lHKHbtJm4HG1wlBeg
+RbTnR8nqetzhj0UYq2JfhW4u7dYw4gPQdGWujQIDAQABAoIBAHdoSXdK+E+xX/hJ
+0G/TR7NP3jHDsTYUg/8zveQL4l6hlRKLsnRX2hwVMypZn5IUqT/a+oWbpB2sZjyL
+x4YHJP2YQViO1/rZhPr+dK6IDxg9V30F3CdayE1fqZx3Iq19NOQxeNRVnOb3W5Qr
+ZIAJ0XqQEnk+21GAcGinpzh9YHcPWpb+tFUDvtKZLQYrR7523CZ2/ZrRnppxk93r
+0gujp99fw/X9GJtFX0QBRz7G7IZnA7ngzhwi/nEdaNx9AyXS1tSHqJFTJGg/xK3t
+TpIVzcBNE3Jw4o6D7k8Eju3vvfRe+VtAvVQDtCSpgMbt1d+xlraJGo7Hi++rDYvw
+8Cfb84ECgYEA5fEb4HdpzQiX8PlRC8nRjttQPjQEnAiNN2CRtlvNJbwGmFsD9WaW
+gAIyTbUNYDjBM+WGVcnxNqDJO8cFTosdOu4yE4q3umsGpQW1tqzE77AFyfrbIIg9
+MX8IWgWavZLaMNRj8QgE3IrfuwoyKIm//SFczX5ot27AJ4Y/nyxDAPECgYEA0M0Z
+M15CdAsI81Ojnsi/Deplvx6/mMFw1i2Sxvd/aPL2HCBIgx44S+vlzMEqi/qEuXsn
+KsDLIT2PaNacU+/hap16HwvGxsHAv/n9mhJs0i+N1cWZ3CcOAWVPNXfijGvG0t79
+u80l+Rc3PEKZfXBTbxnFqKetwK7DZj2BGL+Dx10CgYBlzSxxYYzm6JIUbt0R4gU0
+QSayk2cjCaozxT5dxSD7PtaQp2MGR6gD/nT08F5+pkHrTwf9fU2cyOyu2Xsg/fgv
++fsTqcuT7gRgFToRKUZ7c6vsc3KGYart+fbhnC+ZFKYjDjU9Jja4yYcqEOaKCgqE
+8DtdA0UrSQ4rsYUDXJ5BkQKBgC/Du1AU7/67x4BiUbuxEIOOa1gdIJdBKR7Vrg31
+8B+B9OraN7xG3XoArMD6L1F2LYaAtaUCFXW1L2k8LubEqTxKafVQLFirWfyQo4Lr
+VBmA52FPorLJ/Fo1YrlIg3q77O+wMzsS4uzocqpGUfZwC6YOrzi1ovnBANISn8WZ
+ifvBAoGAT2lVxf9FK3jRFo8WtxeY83HWgTW21vytYMOxeqrEiBteP+Klli8zEDCs
+dwRlwciNIYjpIYaD6G6nkutkapQuGWzX7KygUQjrSEiNJfAehiwQwbO8Tgp0jp3d
+hIaeE4kD4DIDLNr9mQqSKPbVOdIw+RTxwKTQckExO/NzUyzngys=
+-----END RSA PRIVATE KEY-----

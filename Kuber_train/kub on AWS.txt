@@ -1,0 +1,24 @@
+Create IAM role Rule access:
+
+EC2fullaccess
+route53
+s3
+IAMfullaccess
+
+the create role
+
+
+and then attach to AWS instance
+
+Now go back to terminal:
+AWS configure: 
+Access Key ID:press enter
+AWS Secreat Key:press ent
+Default region name: us-west-2
+Default output format:press enter
+
+Health check for kub clustr:
+Liveness probe
+Readyness probe
+
+

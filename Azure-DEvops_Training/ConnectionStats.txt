@@ -1,0 +1,11 @@
+Connectivity State : Connected
+Remote Tunnel Endpoint : 146.216.2.33
+Ingress Bytes (since last connected) : 3140 B
+Egress Bytes (since last connected) : 27532 B
+Ingress Packets (since last connected) : 49 Packets
+Egress Packets (since last connected) : 447 Packets
+Ingress Packets Dropped due to Traffic Selector Mismatch (since last connected) : 0 Packets
+Egress Packets Dropped due to Traffic Selector Mismatch (since last connected) : 2 Packets
+Bandwidth : 0 b/s
+Peak Bandwidth : 0 b/s
+Connected Since : 2/21/2020 2:16:09 AM

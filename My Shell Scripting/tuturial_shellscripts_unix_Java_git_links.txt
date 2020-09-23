@@ -1,0 +1,24 @@
+https://www.tutorialspoint.com/jenkins/jenkins_setup_build_jobs.htm
+
+https://www.softwaretestinghelp.com/jenkins-interview-questions/
+
+https://www.edureka.co/blog/interview-questions/java-interview-questions/#OOPs
+
+https://career.guru99.com/top-40-interview-questions-on-git/
+
+https://www.javatpoint.com/corejava-interview-questions
+
+https://www.guru99.com/rest-api-interview-question-answers.html
+
+https://www.techbeamers.com/rest-api-interview-questions-answers/
+
+https://www.tutorialspoint.com/unix_commands/zgrep.htm
+
+https://www.guru99.com/introduction-to-shell-scripting.html
+
+https://www.tutorialspoint.com/unix/unix-shell-substitutions.htm
+
+
+Azure Migration:
+https://docs.microsoft.com/en-us/azure/migrate/tutorial-migrate-physical-virtual-machines
+

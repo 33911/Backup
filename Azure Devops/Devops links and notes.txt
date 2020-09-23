@@ -1,0 +1,107 @@
+Devops azure link:
+https://dev.azure.com/33911/
+
+DEvops self assessment:
+https://www.devopsassessment.net/
+
+citrix machine:
+https://vs.iiht.tech/vpn/index.html
+
+iiht\itcazure10
+pass@word1
+
+Power shell docs microsoft:
+https://docs.microsoft.com/en-us/powershell/scripting/overview?view=powershell-6
+power shell DSC
+ARM Template
+P
+
+http://DevOpsAssessment.azurewebsites.net/
+
+https://aka.ms/OurDevOpsJourney
+
+https://www.microsoft.com/en-in/vidyapeeth/
+
+https://www.janbasktraining.com/blog/what-is-microsoft-azure/
+
+https://docs.microsoft.com/en-us/azure/devops/?view=azure-devops
+
+Deployment Group - Windows & Linux
+https://docs.microsoft.com/en-us/azure/devops/pipelines/apps/cd/deploy-linuxvm-deploygroups?view=azure-devops&tabs=java
+
+https://docs.microsoft.com/en-us/azure/devops/pipelines/apps/cd/deploy-webdeploy-iis-deploygroups?view=azure-devops
+
+
+azure devops demo generator (to create project)
+
+https://azuredevopsdemogenerator.azurewebsites.net/environment/createproject
+
+Build.Repository.LocalPath
+
+
+
+https://yum.puppetlabs.com/
+
+https://searchitoperations.techtarget.com/definition/Puppet-Puppet-Labs
+
+https://forge.puppet.com/
+iis
+
+prasoon.southeastasia.cloudapp.azure.com
+
+sudo /opt/puppetlabs/puppet/bin/ruby /opt/puppetlabs/server/bin/set_console_admin_password.rb password
+
+https://prasoon.southeastasia.cloudapp.azure.com/
+
+htpps://dns name ofmaster
+
+168.
+
+
+
+
+
+Multi stage pipeline
+
+
+Puppet Demos - command
+sudo /opt/puppetlabs/puppet/bin/ruby /opt/puppetlabs/server/bin/set_console_admin_password.rb demo@pass123
+
+Azure Artifacts - sample repo
+https://github.com/nwcadence/MyShuttle2.git
+
+https://github.com/nwcadence/MyShuttleCalc.git
+
+<server>
+  <id>dev-azure-com-33911-newfeed</id>
+  <username>newfeed</username>
+  <!-- Treat this auth token like a password. Do not share it with anyone, including Microsoft support. -->
+  <!-- The generated token expires on or before 12/26/2019 -->
+  <password>k22kg65lptqidwmqnxbsxl7fgudnl6dqs4lfewqvvytj3blqpj5q</password>
+</server>
+
+<repository>
+  <id>dev-azure-com-33911-newfeed</id>
+  <url>https://pkgs.dev.azure.com/33911/_packaging/newfeed/maven/v1</url>
+  <releases>
+    <enabled>true</enabled>
+  </releases>
+  <snapshots>
+    <enabled>true</enabled>
+  </snapshots>
+</repository>
+<repository>
+  <id>dev-azure-com-33911-demofeed_artifact</id>
+  <url>https://pkgs.dev.azure.com/33911/_packaging/Demofeed_artifact/maven/v1</url>
+  <releases>
+    <enabled>true</enabled>
+  </releases>
+  <snapshots>
+    <enabled>true</enabled>
+  </snapshots>
+</repository>
+
+poc5uq7fvty3cubdnoel4mxelwmfb2ob6rik4ytqg6lppnaagdvq
+
+
+12347845

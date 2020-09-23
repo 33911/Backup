@@ -1,0 +1,22 @@
+1. change multi-client to multi worker
+
+2. 3change port back to 3000
+
+3. make replicas to 3
+
+
+Replication controller:
+
+ kubectl get po -l app=nginx-app
+
+kubectl describe rc nginx-rc
+
+kubectl delete pod nginx-rc-8nfwm
+delete particular pod
+
+kubectl scale rc nginx-rc --replicas=5
+to create repicas
+
+
+kubectl delete -f nginx-rc.yaml
+destroy replica controller

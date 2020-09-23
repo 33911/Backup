@@ -1,0 +1,4 @@
+https://www.tutorialspoint.com/ansible/ansible_environment_setup.htm
+
+
+https://docs.ansible.com/ansible/latest/user_guide/playbooks_intro.html#playbook-language-example

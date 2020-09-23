@@ -1,0 +1,5 @@
+gcloud beta compute ssh --zone "us-central1-a" "prasoon-vm1" --project "fluted-bee-287408"
+
+
+
+ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQEAipKqfvVPrJnUQXExSfQZJur1UYlYYcMiyfNmBkp/GwvtnwEh+lXRmpGBUubgZfFtKyXlwN2E6Kpl9F2V1N7Mg1EWeeNSa/eCuVcBDjKtJr2MUpgFJy/FgaRhhbZ/n4Jc2ZviU6t5Xio5TYiO5+e7bvU+gu4wrEvVYcIKE0slS4rocXYBzH7bNoe/WQcMvvy9OOM/tMZl/5k0TIqnCOLXD/R+Fx/wyaee5WdAM4Mhj7r7vHIkRvlvwjQcgsuDvbXnWGn37dEsmFm2YGvCMItG/sa+kv46MB64Zs/q/09reEdS1HRjocX69gp/HFyjVfrAyfwE4S9Cj1tanGII2r6BgQ== mykey

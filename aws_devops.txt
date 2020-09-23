@@ -1,0 +1,7 @@
+Code deploy agent:   must install it if you want to deploy code
+
+Code installation required ruby
+
+yum install -y ruby
+
+download code installation file from amazon

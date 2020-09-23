@@ -1,0 +1,172 @@
+1 Vi editor
+2. #!/bin/sh
+# is the operator of shebang
+it will direct to the bourne shell.
+
+3. sudo adduser   to create user
+
+4. To delete an account, use the command -
+
+sudo userdel -r 'username'
+
+5. Adding users to the usergroups:
+groupmod "Press Tab key twice"
+sudo usermod -a -G GROUPNAME USERNAME
+
+6. You can check whether the user is in a group by this command.
+
+cat etc/group
+
+7. Removing a user from Usergroup
+sudo deluser USER GROUPNAME
+
+8.Disable a user
+sudo passwd -l 'username'
+
+9.Gives information on all logged in user
+finger
+10.Gives information of a particular user:
+finger username
+
+10. Linux cmds:
+https://www.guru99.com/linux-commands-cheat-sheet.html
+
+11. $ cat -n filename
+display file with line numer
+
+12. wc:
+wc -l : Prints the number of lines in a file.
+wc -w : prints the number of words in a file.
+wc -c : Displays the count of bytes in a file.
+wc -m : prints the count of characters from a file.
+wc -L : prints only the length of the longest line in a file. 
+
+
+12. file permission:
+chmod u=rwx,g=rwx,o=rwx [file_name]
+
+chmod u=rw,g=r,o=r test.txt
+
+14. Instead of letters, the octal format represents privileges with numbers:
+
+r(ead) has the value of 4
+w(rite) has the value of 2
+(e)x(ecute) has the value of 1
+no permission has the value of 0
+The privileges are summed up and depicted by one number. Therefore, the possibilities are:
+
+7 – for read, write, and execute permission
+6 – for read and write privileges
+5 – for read and execute privileges
+4 – for read privileges
+As you have to define permission for each category (user, group, owner), the command will include three (3) numbers (each representing the summation of privileges).
+
+For instance, let’s look at the test.txt file that we symbolically configured with the chmod u=rw,g=r,o=r test.txtcommand.
+
+The same permission settings can be defined using the octal format with the command:
+
+chmod 644 test.txt
+
+15. :q to quit vi editor
+
+16. :w to save vi file
+
+17. :wq! to save and forcefully quit vi editor
+
+18. for looping
+#!/bin/sh
+
+for TOKEN in $*
+do
+   echo $TOKEN
+done
+
+19.
+$0 = The filename of the current script.
+$n = These variables correspond to the arguments with which a script was invoked. Here n is a positive decimal number corresponding to the position of an argument (the first argument is $1, the second argument is $2, and so on).
+$# =The number of arguments supplied to a script.
+$* =All the arguments are double quoted. If a script receives two arguments, $* is equivalent to $1 $2.
+$@ =All the arguments are individually double quoted. If a script receives two arguments, $@ is equivalent to $1 $2.
+$? =The exit status of the last command executed.
+$$ =The process number of the current shell. For shell scripts, this is the process ID under which they are executing.
+$! =The process number of the last background command.
+
+
+20. array:
+define:
+array_name[index]=value
+
+Retrive:
+${array_name[index]}
+
+21. Operators:
+val=`expr 2 + 2`
+echo "Total value : $val"
+
+Airtmatic:
++ (Addition)	Adds values on either side of the operator	`expr $a + $b` will give 30
+- (Subtraction)	Subtracts right hand operand from left hand operand	`expr $a - $b` will give -10
+* (Multiplication)	Multiplies values on either side of the operator	`expr $a \* $b` will give 200
+/ (Division)	Divides left hand operand by right hand operand	`expr $b / $a` will give 2
+% (Modulus)	Divides left hand operand by right hand operand and returns remainder	`expr $b % $a` will give 0
+= (Assignment)	Assigns right operand in left operand	a = $b would assign value of b into a
+== (Equality)	Compares two numbers, if both are same then returns true.	[ $a == $b ] would return false.
+!= (Not Equality)	Compares two numbers, if both are different then returns true.	[ $a != $b ] would return true.
+
+Relationals:
+-eq	Checks if the value of two operands are equal or not; if yes, then the condition becomes true.	[ $a -eq $b ] is not true.
+-ne	Checks if the value of two operands are equal or not; if values are not equal, then the condition becomes true.	[ $a -ne $b ] is true.
+-gt	Checks if the value of left operand is greater than the value of right operand; if yes, then the condition becomes true.	[ $a -gt $b ] is not true.
+-lt	Checks if the value of left operand is less than the value of right operand; if yes, then the condition becomes true.	[ $a -lt $b ] is true.
+-ge	Checks if the value of left operand is greater than or equal to the value of right operand; if yes, then the condition becomes true.	[ $a -ge $b ] is not true.
+-le	Checks if the value of left operand is less than or equal to the value of right operand; if yes, then the condition becomes true.	[ $a -le $b ] is true.
+
+Boolean operator:
+!	This is logical negation. This inverts a true condition into false and vice versa.	[ ! false ] is true.
+-o	This is logical OR. If one of the operands is true, then the condition becomes true.	[ $a -lt 20 -o $b -gt 100 ] is true.
+-a	This is logical AND. If both the operands are true, then the condition becomes true otherwise false.	[ $a -lt 20 -a $b -gt 100 ] is false.
+
+
+String Operator:
+=	Checks if the value of two operands are equal or not; if yes, then the condition becomes true.	[ $a = $b ] is not true.
+!=	Checks if the value of two operands are equal or not; if values are not equal then the condition becomes true.	[ $a != $b ] is true.
+-z	Checks if the given string operand size is zero; if it is zero length, then it returns true.	[ -z $a ] is not true.
+-n	Checks if the given string operand size is non-zero; if it is nonzero length, then it returns true.	[ -n $a ] is not false.
+str	Checks if str is not the empty string; if it is empty, then it returns false.	[ $a ] is not false.
+
+
+if else: unix Shell supports following forms of if…else statement -
+
+if...fi statement
+if...else...fi statement
+if...elif...else...fi statement
+
+The case...esac Statement
+
+
+Looping:
+following types of loops available to shell programmers -
+
+The while loop
+The for loop
+The until loop
+The select loop
+
+Example:
+#!/bin/sh
+
+a=0
+while [ "$a" -lt 10 ]    # this is loop1
+do
+   b="$a"
+   while [ "$b" -ge 0 ]  # this is loop2
+   do
+      echo -n "$b "
+      b=`expr $b - 1`
+   done
+   echo
+   a=`expr $a + 1`
+done
+
+
+
