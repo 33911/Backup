@@ -1,0 +1,8 @@
+
+https://www.devopsschool.com/videos/
+http://3.7.73.88:8080/job/UdayG/job/Uday_job/
+https://github.com/devopsschool-training-notes/Johndeere-devsecops-oct-2020/blob/main/Day1.txt
+https://github.com/devopsschool-training-notes/Johndeere-devsecops-oct-2020/blob/main/Day1.txt
+https://www.devopsschool.com/notes/docker/2019/
+https://docs.docker.com/docker-for-windows/install/
+https://www.devopsschool.com/tutorial/docker/install-config/docker-install-commuityedition-centos-rhel.html
