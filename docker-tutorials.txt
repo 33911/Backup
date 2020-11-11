@@ -1,0 +1,9 @@
+https://www.mirantis.com/blog/how-do-i-create-a-new-docker-image-for-my-application/
+
+
+https://docs.docker.com/develop/develop-images/baseimages/
+
+https://www.infoworld.com/article/3271126/what-is-cicd-continuous-integration-and-continuous-delivery-explained.html
+
+
+https://www.edureka.co/blog/docker-commands/

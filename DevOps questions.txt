@@ -1,0 +1,56 @@
+https://dev.to/andresfmoya/multiple-playbooks-in-ansible-2pdc
+
+https://www.jenkins.io/solutions/pipeline/
+
+https://www.jenkins.io/doc/book/pipeline/
+
+https://www.tutorialspoint.com/unix/unix-useful-commands.htm
+
+https://docs.microsoft.com/en-us/azure/devops/pipelines/?view=azure-devops
+
+https://adamtheautomator.com/azure-pipelines-tutorial/
+
+https://docs.microsoft.com/en-us/azure/devops/pipelines/licensing/concurrent-jobs?view=azure-devops&tabs=ms-hosted
+
+https://www.whizlabs.com/blog/azure-devops-interview-questions/
+
+https://www.tutorialspoint.com/ansible/ansible_introduction.htm
+
+https://www.infoworld.com/article/3271126/what-is-cicd-continuous-integration-and-continuous-delivery-explained.html
+
+https://www.azuredevopslabs.com/labs/vstsextend/jenkins/
+
+
+ansible default location
+Docker file
+ansible file
+where ansible will store if you run from jenkins
+how you can configure ansible through jenkins
+through pipeline code
+Master and Slave in jenkins
+Ansible modules in playbook
+Git reset
+can i revert back code after push
+ARM
+poweshell 
+ARM
+terraform
+kuberneetes cluster
+-IT in docker
+groovy script file in jenkins
+how to create yml file
+
+Step 1: Setup. ...
+Step 2: Create a Dockerfile. ...
+Step 3: Define services in a Compose file. ...
+Step 4: Build and run your app with Compose. ...
+Step 5: Edit the Compose file to add a bind mount. ...
+Step 6: Re-build and run the app with Compose. ...
+Step 7: Update the application. ...
+Step 8: Experiment with some other commands.
+
+
+
+7514 TML offshore
+
+global protect

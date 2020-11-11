@@ -1,0 +1,7 @@
+https://www.tutorialspoint.com/kubernetes/index.htm
+
+https://www.guru99.com/kubernetes-tutorial.html
+
+https://www.tutorialspoint.com/kubernetes/kubernetes_setup.htm
+
+
